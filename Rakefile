@@ -1,8 +1,6 @@
-require 'pry'
-
 task :pull do
   say 'pulling latest image'
-  docker 'pull -xyz assemblyline/buildpack_deps:latest'
+  docker 'pull assemblyline/buildpack_deps:latest'
 end
 
 task build_check: [:pull] do
