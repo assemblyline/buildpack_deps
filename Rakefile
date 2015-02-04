@@ -30,7 +30,8 @@ def say(message)
 end
 
 def packages_need_updating?
-  !system('docker run --rm -ti assemblyline/buildpack_deps:check')
+  `docker run --rm -ti assemblyline/buildpack_deps:check`
+  !$?.success?
 end
 
 def docker(command)
