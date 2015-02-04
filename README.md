@@ -5,8 +5,10 @@ Based on Ubuntu 14.04.01, this image should include all the dependencies require
 ### Suported Langage Stacks
 * Ruby
 
-### Trusted Build
-`assemblyline/buildpack_deps`
+### Automated Build
+This image is built automaticly on docker hub.
+
+`docker pull assemblyline/buildpack_deps`
 
 ### Update Schedule
-The trusted build is regularly tested to ensure no package updates are avalible from Ubuntu and automaticly rebuilt as required
+The image is tested for package updates once an hour and rebuilt if required.
