@@ -5,7 +5,7 @@ end
 
 task build_check: [:pull] do
   say 'building check environment'
-  sh 'docker build -t --no-cache assemblyline/buildpack_deps:check ./check'
+  sh 'docker build -t assemblyline/buildpack_deps:check ./check'
 end
 
 task trigger_build_if_needed: [:build_check] do
