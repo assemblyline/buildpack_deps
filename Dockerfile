@@ -1,4 +1,4 @@
-FROM ubuntu-debootstrap:14.04.01
+FROM ubuntu-debootstrap:14.04.1
 
 MAINTAINER Reevoo Devops <devops@reevoo.com>
 
