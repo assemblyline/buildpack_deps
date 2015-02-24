@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu-debootstrap:14.04.1
 
 MAINTAINER Reevoo Devops <devops@reevoo.com>
 
@@ -9,6 +9,7 @@ RUN locale-gen en_GB.UTF-8 \
  && apt-get update -q && apt-get install -qy --no-install-recommends \
    autoconf \
    ca-certificates \
+   curl \
    g++ \
    gcc \
    imagemagick \
@@ -32,6 +33,7 @@ RUN locale-gen en_GB.UTF-8 \
    libyaml-dev \
    make \
    patch \
+   wget \
    zlib1g-dev \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* \
