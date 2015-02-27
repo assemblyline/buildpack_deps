@@ -8,6 +8,7 @@ RUN locale-gen en_GB.UTF-8 \
  && cd /usr/share && rm -fr doc/* man/* info/* lintian/* \
  && apt-get update -q && apt-get install -qy --no-install-recommends \
    autoconf \
+   bzip2 \
    ca-certificates \
    curl \
    g++ \
