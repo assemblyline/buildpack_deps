@@ -1,4 +1,4 @@
-FROM ubuntu-debootstrap:14.04.1
+FROM quay.io/assemblyline/ubuntu:14.04.2
 
 MAINTAINER Reevoo Devops <devops@reevoo.com>
 
