@@ -35,6 +35,7 @@ RUN locale-gen en_GB.UTF-8 \
    libxslt-dev \
    libyaml-dev \
    make \
+   openssh-client \
    patch \
    wget \
    zlib1g-dev \
