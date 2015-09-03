@@ -1,4 +1,4 @@
-FROM ubuntu-debootstrap:14.04.1
+FROM quay.io/assemblyline/ubuntu:14.04.2
 
 MAINTAINER Reevoo Devops <devops@reevoo.com>
 
@@ -7,11 +7,14 @@ RUN locale-gen en_GB.UTF-8 \
  && printf "path-exclude /usr/share/doc/*\npath-exclude /usr/share/man/*\npath-exclude /usr/share/info/*\npath-exclude /usr/share/lintian/*" >> /etc/dpkg/dpkg.cfg.d/nodoc \
  && cd /usr/share && rm -fr doc/* man/* info/* lintian/* \
  && apt-get update -q && apt-get install -qy --no-install-recommends \
+   apt-transport-https \
    autoconf \
+   bzip2 \
    ca-certificates \
    curl \
    g++ \
    gcc \
+   git \
    imagemagick \
    libbz2-dev \
    libc6-dev \
@@ -32,6 +35,7 @@ RUN locale-gen en_GB.UTF-8 \
    libxslt-dev \
    libyaml-dev \
    make \
+   openssh-client \
    patch \
    wget \
    zlib1g-dev \
