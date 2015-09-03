@@ -19,6 +19,7 @@ RUN locale-gen en_GB.UTF-8 \
    libbz2-dev \
    libc6-dev \
    libcurl4-openssl-dev \
+   libgdbm-dev \
    libevent-dev \
    libffi-dev \
    libglib2.0-dev \
