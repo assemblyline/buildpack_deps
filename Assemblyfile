@@ -1,0 +1,6 @@
+[component]
+name = 'Buildpack Deps'
+repo = 'quay.io/assemblyline/buildpack_deps'
+
+[[version]] 
+version = '14.04'
