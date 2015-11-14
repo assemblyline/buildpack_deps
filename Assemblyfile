@@ -4,3 +4,6 @@ repo = 'quay.io/assemblyline/buildpack_deps'
 
 [[version]] 
 version = '14.04'
+
+[[version]]
+version = '15.10'
