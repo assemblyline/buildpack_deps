@@ -45,4 +45,4 @@ RUN locale-gen en_GB.UTF-8 \
  && curl -o /usr/local/bin/apt-check https://raw.githubusercontent.com/assemblyline/apt-check.sh/master/apt-check.sh \
  && chmod +x /usr/local/bin/apt-check
 
-ENV LANG=en_GB.UTF-8 LANGUAGE=en_GB.UTF-8 LC_AL=en_GB.UTF-8
+ENV LANG="en_GB.UTF-8" LANGUAGE="en_GB.UTF-8" LC_ALL="en_GB.UTF-8"
