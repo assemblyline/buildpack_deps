@@ -1,4 +1,4 @@
-FROM ubuntu-debootstrap:<%= data['version'] %>
+FROM ubuntu:<%= data['version'] %>
 LABEL io.github.assemblyline.buildpack_deps.built_at="<%= Time.now.to_i %>"
 
 RUN locale-gen en_GB.UTF-8 \
