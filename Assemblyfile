@@ -7,3 +7,6 @@ version = '14.04'
 
 [[version]]
 version = '15.10'
+
+[[version]]
+version = '16.04'
