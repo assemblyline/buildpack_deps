@@ -1,6 +1,8 @@
 FROM ubuntu:<%= data['version'] %>
 LABEL io.github.assemblyline.buildpack_deps.built_at="<%= Time.now.to_i %>"
 
+COPY certs/rds-combined-ca-bundle.crt /usr/local/share/ca-certificates/rds/
+
 RUN locale-gen en_GB.UTF-8 \
  && update-locale LANG=en_GB.UTF-8 LANGUAGE=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 \
  && printf "path-exclude /usr/share/doc/*\npath-exclude /usr/share/man/*\npath-exclude /usr/share/info/*\npath-exclude /usr/share/lintian/*" >> /etc/dpkg/dpkg.cfg.d/nodoc \
@@ -44,6 +46,7 @@ RUN locale-gen en_GB.UTF-8 \
  && rm -rf /var/lib/apt/lists/* \
  && truncate -s 0 /var/log/*log \
  && curl -o /usr/local/bin/apt-check https://raw.githubusercontent.com/assemblyline/apt-check.sh/master/apt-check.sh \
- && chmod +x /usr/local/bin/apt-check
+ && chmod +x /usr/local/bin/apt-check \
+ && update-ca-certificates
 
 ENV LANG="en_GB.UTF-8" LANGUAGE="en_GB.UTF-8" LC_ALL="en_GB.UTF-8"
