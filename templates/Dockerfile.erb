@@ -1,7 +1,7 @@
 FROM ubuntu:<%= data['version'] %>
 LABEL io.github.assemblyline.buildpack_deps.built_at="<%= Time.now.to_i %>"
 
-COPY certs/rds-combined-ca-bundle.crt /usr/local/share/ca-certificates/rds/
+COPY certs/rds-combined-ca-bundle.crt /root/.postgresql/root.crt
 
 RUN locale-gen en_GB.UTF-8 \
  && update-locale LANG=en_GB.UTF-8 LANGUAGE=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 \
@@ -47,6 +47,5 @@ RUN locale-gen en_GB.UTF-8 \
  && truncate -s 0 /var/log/*log \
  && curl -o /usr/local/bin/apt-check https://raw.githubusercontent.com/assemblyline/apt-check.sh/master/apt-check.sh \
  && chmod +x /usr/local/bin/apt-check \
- && update-ca-certificates
 
 ENV LANG="en_GB.UTF-8" LANGUAGE="en_GB.UTF-8" LC_ALL="en_GB.UTF-8"
